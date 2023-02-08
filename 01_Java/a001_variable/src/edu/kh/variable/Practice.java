@@ -50,5 +50,7 @@ public class Practice {
 		System.out.println((int)ch); //65
 		System.out.println(iNum1 + ch ); //75
 		System.out.println((char)(ch + iNum1)); //K 
+		
+		// 주석
 	}
 }
