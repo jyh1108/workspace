@@ -10,9 +10,12 @@ public class OperatorPractice1 {
 		System.out.print("사탕 개수 : " );
 		int cNum = sc.nextInt();
 		
+		
+			
+		
 		int result1 = cNum / pNum ; 
 		int result2 = cNum % pNum; 
-		System.out.println("1인당 사탕 개수 :" +  result1);
+		System.out.println("\n1인당 사탕 개수 :" +  result1);
 		System.out.println("남은 사탕 개수 :" +  result2);
 	}
 }

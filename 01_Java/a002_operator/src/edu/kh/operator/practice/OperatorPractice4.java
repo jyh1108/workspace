@@ -13,8 +13,8 @@ public class OperatorPractice4 {
 		int Math = sc.nextInt();
 		
 		int sum = Kor + Eng + Math;
-		System.out.println(" 합계 : " + sum);
-		double ave = (double)sum / 3;
+		System.out.println("합계 : " + sum);
+		double ave = sum / 3.0;
 		System.out.println("평균 : " + ave);
 		String score = Kor >= 40 && Eng >= 40 && Math >=40 && ave >=60 ? "합격" : "불합격";
 		System.out.println(score);
