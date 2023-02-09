@@ -5,7 +5,7 @@ import java.util.Scanner;
 import javax.swing.text.DefaultTextUI;
 
 public class SwitchEx {
-
+	// 주석
 	/*
 	 * switch문 (switch - case 문)
 	 * - 식 하나의 결과로 많은 경우의 수를 처리할 때 사용하는 조건문
