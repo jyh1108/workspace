@@ -7,12 +7,9 @@ public class ConditionPracticeRun {
 		
 //		co.practice1();
 //		co.practice2();
-<<<<<<< HEAD
-		co.practice3();
-=======
+
 //		co.practice3();
 //		co.practice4();
 		co.practice5();
->>>>>>> 97e10b7dcd899251930cbd5c0e5312a5db51494d
 	}
 }
