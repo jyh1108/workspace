@@ -196,6 +196,7 @@ public class ForPractice {
 					 if(i != 1 && x != 1 && i != input1&& x != input1) {
 							 System.out.print(" ");
 					 }else {
+						 
 					 System.out.print("*");
 					 }
 				 }

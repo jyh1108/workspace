@@ -48,18 +48,30 @@ public class ArrayPractice {
 	//4번
 	public void practice4() {
 		Scanner sc = new Scanner(System.in);
-		
 		int[] arr = new int[5];
 		for(int i = 0; i<arr.length; i++) {
 			System.out.printf("입력 %d: ", i);
 			int input = sc.nextInt();
 			arr[i]= input;
 		}
-		System.out.println(" 검색할 값 : ");
+		System.out.print("검색할 값 : ");
 		int input2 = sc.nextInt();
-		if(arr[i]==input2) {
-			
+		boolean bo = false;
+		for(int i =0; i<arr.length; i++) {
+			if(arr[i]==input2) {
+				System.out.print("인덱스 : " + i);
+				bo = true;
+				break;
+			} 
 		}
+		if(!bo) {
+			System.out.println("일치하는 값이 존재하지 않습니다.");
+		}
+	}
+	
+	//5번문제
+	public void practice5(){
+		
 		
 	}
 }
