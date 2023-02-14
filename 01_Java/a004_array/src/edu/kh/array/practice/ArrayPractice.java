@@ -2,6 +2,8 @@ package edu.kh.array.practice;
 
 import java.util.Scanner;
 
+import javax.naming.directory.SearchControls;
+
 public class ArrayPractice {
 		
 	//1번
@@ -71,7 +73,12 @@ public class ArrayPractice {
 	
 	//5번문제
 	public void practice5(){
-		
+		Scanner sc =new Scanner(System.in);
+		System.out.print("문자열 : ");
+		String str = sc.next();
+		System.out.print("문자 : ");
+		char ch = sc.next().charAt(0);
+		char [] arr = new char[str.length()];
 		
 	}
 }
