@@ -134,89 +134,101 @@ public class ArrayPractice {
 		System.out.print("정수 : ");
 		int input = sc.nextInt();
 		int[] arr = new int[input];
-		int div = arr.length/2;
+		int div = arr.length / 2;
 		if (input < 3 || input % 2 == 0) {
 			System.out.println("다시 입력하세요.");
-		} else { 
-			for(int i =0; i<arr.length; i++) {
-				if(i<= div ) {
-				arr[i] = i+1;
-				}else {
+		} else {
+			for (int i = 0; i < arr.length; i++) {
+				if (i <= div) {
+					arr[i] = i + 1;
+				} else {
 					arr[i] = arr[div] - (i - div);
 				}
 				System.out.print(arr[i]);
 			}
 		}
 	}
-	
-	//9번
-	public void practice9(){
+
+	// 9번
+	public void practice9() {
 		System.out.print("발생한 난수 : ");
-		int [] arr = new int[10];
-		
-		for(int i=0; i<arr.length; i++) {
-			arr[i] = (int)(Math.random() * 10 + 1);
-			System.out.print(arr[i]+ " ");
+		int[] arr = new int[10];
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 10 + 1);
+			System.out.print(arr[i] + " ");
 		}
 	}
-	
-	//10번
-	public void practice10(){
+
+	// 10번
+	public void practice10() {
 		System.out.print("발생한 난수 : ");
-		int [] arr = new int[10];
-		
-		
-		for(int i=0; i<arr.length; i++) {
-			arr[i] = (int)(Math.random() * 10 + 1);
-			System.out.print(arr[i]+ " ");
+		int[] arr = new int[10];
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 10 + 1);
+			System.out.print(arr[i] + " ");
 		}
 		int max = arr[0];
 		int min = arr[0];
-		for(int i=0; i<arr.length; i++) {
-			if(arr[i]>max) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > max) {
 				max = arr[i];
 			}
-			if(arr[i]<min) {
+			if (arr[i] < min) {
 				min = arr[i];
 			}
 		}
-		System.out.println("\n최대값 : " +max);
-		System.out.println("최소값 : " +min);
+		System.out.println("\n최대값 : " + max);
+		System.out.println("최소값 : " + min);
 	}
-	
-	//11번 
-	public void practice11(){
-		int [] arr = new int [10];
-		
-		for(int i=0; i<arr.length; i++) {
-			int ran =(int)(Math.random() *10 +1);
-			for(int j=0; j<i; j++) {
-				ran =(int)(Math.random() *10 +1);
-				if(arr[j] == ran) {
-					j = -1 ;
+
+	// 11번
+	public void practice11() {
+		int[] arr = new int[10];
+		for (int i = 0; i < arr.length; i++) {
+			int ran = (int) (Math.random() * 10 + 1);
+			for (int j = 0; j < i; j++) {
+				ran = (int) (Math.random() * 10 + 1);
+				if (arr[j] == ran) {
+					j = -1;
 				}
 			}
 			arr[i] = ran;
 			System.out.print(arr[i] + " ");
 		}
 	}
-	//12번
-	public void practice12(){
-		int[]arr = new int[6];
-		
-		for(int i=0; i<arr.length; i++) {
-			int ran = (int)(Math.random() * 45 +1 );
-			for(int j=0; j<i; j++) {
-				ran = (int)(Math.random() * 45 +1 );
-				if(arr[j] == ran) {
-					j= -1;
+
+	// 12번
+	public void practice12() {
+		int[] arr = new int[6];
+		for (int i = 0; i < arr.length; i++) {
+			int ran = (int) (Math.random() * 45 + 1);
+			arr[i] = ran;
+			for (int j = 0; j < i; j++) {
+				if (arr[j] == arr[i]) {
+					j = -1;
 				}
 			}
-			arr[i] = ran;
-		}
-		for(int i =0; i<arr.length; i++) {
-			System.out.print(arr[i]+ " ");
 		}
 		Arrays.sort(arr);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+
+		}
 	}
+
+	// 13번
+	public void practice13() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열 : ");
+		String str = sc.next();
+		int count = 0;
+		char[] arr = new char[str.length()];
+		for (int i = 0; i < str.length(); i++) {
+			arr[i] = str.charAt(i);
+			System.out.print(arr[i] + " ");
+		}
+	}
+
 }
