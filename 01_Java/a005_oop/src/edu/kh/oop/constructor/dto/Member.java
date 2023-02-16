@@ -106,7 +106,7 @@ public class Member {
 	
 	public Member(int memberAge, String memberId) {} // 성립 (순서)
 	
-	public Member(int memberAge, String memberName) {} // 오류 
+//	public Member(int memberAge, String memberName) {} // 오류 
 	//변수명이 아닌 자료형을 신경써야 한다!!
 	
 	// 일반 기능 (메서드)

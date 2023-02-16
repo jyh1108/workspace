@@ -1,5 +1,6 @@
 package edu.kh.array.practice;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.naming.directory.SearchControls;
@@ -146,5 +147,76 @@ public class ArrayPractice {
 				System.out.print(arr[i]);
 			}
 		}
+	}
+	
+	//9번
+	public void practice9(){
+		System.out.print("발생한 난수 : ");
+		int [] arr = new int[10];
+		
+		for(int i=0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random() * 10 + 1);
+			System.out.print(arr[i]+ " ");
+		}
+	}
+	
+	//10번
+	public void practice10(){
+		System.out.print("발생한 난수 : ");
+		int [] arr = new int[10];
+		
+		
+		for(int i=0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random() * 10 + 1);
+			System.out.print(arr[i]+ " ");
+		}
+		int max = arr[0];
+		int min = arr[0];
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]>max) {
+				max = arr[i];
+			}
+			if(arr[i]<min) {
+				min = arr[i];
+			}
+		}
+		System.out.println("\n최대값 : " +max);
+		System.out.println("최소값 : " +min);
+	}
+	
+	//11번 
+	public void practice11(){
+		int [] arr = new int [10];
+		
+		for(int i=0; i<arr.length; i++) {
+			int ran =(int)(Math.random() *10 +1);
+			for(int j=0; j<i; j++) {
+				ran =(int)(Math.random() *10 +1);
+				if(arr[j] == ran) {
+					j = -1 ;
+				}
+			}
+			arr[i] = ran;
+			System.out.print(arr[i] + " ");
+		}
+	}
+	//12번
+	public void practice12(){
+		int[]arr = new int[6];
+		
+		for(int i=0; i<arr.length; i++) {
+			int ran = (int)(Math.random() * 45 +1 );
+			for(int j=0; j<i; j++) {
+				ran = (int)(Math.random() * 45 +1 );
+				if(arr[j] == ran) {
+					j= -1;
+				}
+			}
+			arr[i] = ran;
+		}
+		for(int i =0; i<arr.length; i++) {
+			System.out.print(arr[i]+ " ");
+		}
+		Arrays.sort(arr);
 	}
 }
