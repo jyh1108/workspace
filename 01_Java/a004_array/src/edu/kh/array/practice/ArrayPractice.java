@@ -2,6 +2,7 @@ package edu.kh.array.practice;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.locks.Condition;
 
 import javax.naming.directory.SearchControls;
 
@@ -133,11 +134,16 @@ public class ArrayPractice {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("정수 : ");
 		int input = sc.nextInt();
-		int[] arr = new int[input];
-		int div = arr.length / 2;
-		if (input < 3 || input % 2 == 0) {
-			System.out.println("다시 입력하세요.");
-		} else {
+
+		while (input < 3 || input % 2 == 0) {
+			if (input < 3 || input % 2 == 0) {
+				System.out.println("다시 입력하세요.");
+				input = sc.nextInt();
+			}
+		}
+		{
+			int[] arr = new int[input];
+			int div = arr.length / 2;
 			for (int i = 0; i < arr.length; i++) {
 				if (i <= div) {
 					arr[i] = i + 1;
@@ -225,10 +231,130 @@ public class ArrayPractice {
 		String str = sc.next();
 		int count = 0;
 		char[] arr = new char[str.length()];
-		for (int i = 0; i < str.length(); i++) {
+		for (int i = 0; i < arr.length; i++) {
 			arr[i] = str.charAt(i);
-			System.out.print(arr[i] + " ");
+			boolean ia = false;
+			for (int j = 0; j < i; j++) {
+				if (arr[j] == arr[i]) {
+					ia = true;
+					break;
+				}
+			}
+			if (!ia) {
+				count++;
+				System.out.print(arr[i] + " ");
+			}
+		}
+		System.out.println("\n문자 개수 : " + count);
+	}
+
+	// 14번[pass]
+	public void practice14() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int input = sc.nextInt();
+		String[] arr = new String[input];
+		String[] arr2 = new String[input];
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			System.out.printf("%d번째 문자열 : ", i + 1);
+			String str = sc.next();
+			arr[i] = str;
+			arr2[i] = arr[i];
+			count++;
+		}
+		while (true) {
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char yn = sc.next().charAt(0);
+			if (yn == 'y') {
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int input2 = sc.nextInt();
+				String[] arr3 = new String[input2];
+				for (int i = 0; i < input2; i++) {
+					System.out.printf("%d번째 문자열 : ", ++count);
+					String str = sc.next();
+					arr3[i] = str;
+				}
+				arr2 = Arrays.copyOf(arr2, arr2.length + input2);
+				System.arraycopy(arr3, 0, arr2, input, input2);
+				input += input2;
+			} else if (yn == 'n') {
+				System.out.println(Arrays.toString(arr2));
+				break;
+			}
 		}
 	}
 
+	// 15번
+	public void practice15() {
+		String[][] arr = new String[3][3];
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = String.format("( %s, %s )", i, j);
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+	// 16번
+	public void practice16() {
+		int[][] arr = new int[4][4];
+		int number = 0;
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = number + 1;
+				number++;
+				System.out.printf("%3d", arr[i][j]);
+			}
+			System.out.println();
+		}
+	}
+
+	// 17번
+	public void practice17() {
+		int[][] arr = new int[4][4];
+		int number = 16;
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = number;
+				number--;
+				System.out.printf("%3d", arr[i][j]);
+			}
+			System.out.println();
+		}
+	}
+
+	// 18번
+	public void practice18() {
+		Scanner sc = new Scanner(System.in);
+		int[][] arr = new int[4][4];
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				if (j == 3) {
+					arr[i][3] = arr[i][2] + arr[i][1] + arr[i][0];
+				} else if (i == 3) {
+					arr[3][j] = arr[2][j] + arr[1][j] + arr[0][j];
+				} else {
+					arr[i][j] = (int) (Math.random() * 10 + 1);
+				}
+				System.out.printf("%3d", arr[i][j]);
+			}
+			System.out.println();
+		}
+	}
+
+	// 19번
+	public void practice19() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("행 크기 : ");
+		int yu = sc.nextInt();
+		System.out.print("열 크기 : ");
+		int xu = sc.nextInt();
+
+		while (yu < 1 || yu > 10 || xu < 1 || xu > 10) {
+			System.out.println("반드시 1~10 사이의 정수를 입력해야 합니다.");
+			break;
+		}
+	}
 }
