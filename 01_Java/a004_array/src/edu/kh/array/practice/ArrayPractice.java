@@ -245,7 +245,7 @@ public class ArrayPractice {
 		System.out.println("\n문자 개수 : " + count);
 	}
 
-	// 14번[pass]
+	// 14번
 	public void practice14() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("배열의 크기를 입력하세요 : ");
