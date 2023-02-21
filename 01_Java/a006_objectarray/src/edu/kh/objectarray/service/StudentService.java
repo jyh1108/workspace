@@ -1,5 +1,6 @@
 package edu.kh.objectarray.service;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import edu.kh.objectarray.dto.Student;
@@ -170,24 +171,28 @@ public class StudentService {
 			 }
 		 }
 		 int[] sumarr= new int[size];
-		 int max =sumarr[0];
-		 int min =sumarr[0];
+		
 			 for(int i=0; i<size;i++) {
 				 sumarr[i] = studentArr[i].getKor()+
 						     studentArr[i].getEng()+
 						     studentArr[i].getMath();
-				 if(sumarr[i]>max) {
-					 max = sumarr[i];
-				 }
-				 if(sumarr[i]<min) {
-					 min = sumarr[i];
-				 }
 				 sum += sumarr[i];
 				 }
+			 int max =sumarr[0];
+			 int min =sumarr[0];
+			 for(int i=0; i<size;i++) {
+			 if(sumarr[i]>max) {
+				 max = sumarr[i];
+			 }
+			 if(sumarr[i]<min) {
+				 min = sumarr[i];
+			 }
+			 }
 			 arr[0] = sum;
 			 arr[1] = sum/size;
 			 arr[2] = max;
 			 arr[3] = min;
+			 
 		 return arr;
 	 }
 }
