@@ -255,17 +255,18 @@ public class ArrayPractice {
 		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
 			System.out.printf("%d번째 문자열 : ", i + 1);
-			String str = sc.next();
+			String str = sc.nextLine();
 			arr[i] = str;
 			arr2[i] = arr[i];
 			count++;
 		}
 		while (true) {
 			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
-			char yn = sc.next().charAt(0);
+			char yn = sc.nextLine().charAt(0);
 			if (yn == 'y') {
 				System.out.print("더 입력하고 싶은 개수 : ");
 				int input2 = sc.nextInt();
+				sc.nextLine();
 				String[] arr3 = new String[input2];
 				for (int i = 0; i < input2; i++) {
 					System.out.printf("%d번째 문자열 : ", ++count);

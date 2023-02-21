@@ -17,11 +17,11 @@ public class Student {
 	public Student () {} //기본생성자
 	
 	//매개변수 생성(오버라딩 적용
-	public Student(int grade,int classroom, int number, String name) {
+	public Student(int grade,int classRoom, int number, String name) {
 		
-		//this참조변
+		//this참조변수
 		this.grade = grade;
-		this.classRoom = classroom;
+		this.classRoom = classRoom;
 		this.number = number;
 		this.name = name;
 	}
@@ -73,7 +73,7 @@ public class Student {
 	}
 	// 객체의 필드 값을 하나의 문자열 형태로 반환하는 메서드
 	public String toString() {
-		return String.format("%d학년 %d반 %d번 %s[%d , %d , %d, ]",
+		return String.format("%d학년 %d반 %d번 %s[%d , %d , %d]",
 							grade,classRoom,number,name,kor,eng,math);
 	}
 }
