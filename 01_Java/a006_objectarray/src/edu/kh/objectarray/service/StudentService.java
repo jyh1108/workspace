@@ -161,7 +161,7 @@ public class StudentService {
 		 int[] arr = new int[4];
 		 int sum =0;
 		 int size = 0;
-		 int max =0;
+		
 		 for(int i=0; i<studentArr.length;i++) {
 			 if(studentArr[i]==null) {
 				 break;
@@ -169,19 +169,25 @@ public class StudentService {
 				 size++;
 			 }
 		 }
+		 int[] sumarr= new int[size];
+		 int max =sumarr[0];
+		 int min =sumarr[0];
 			 for(int i=0; i<size;i++) {
-				 if (sum>max){
-					 max = sum;
+				 sumarr[i] = studentArr[i].getKor()+
+						     studentArr[i].getEng()+
+						     studentArr[i].getMath();
+				 if(sumarr[i]>max) {
+					 max = sumarr[i];
 				 }
-				 studentArr[i].getKor();
-				 studentArr[i].getEng();
-				 studentArr[i].getMath();
-				 sum+= studentArr[i].getKor() + studentArr[i].getEng() + studentArr[i].getMath();
-			 
+				 if(sumarr[i]<min) {
+					 min = sumarr[i];
 				 }
-				 arr[0] = sum;
-				 arr[1] = sum/size;
-				 arr[2] = max;
+				 sum += sumarr[i];
+				 }
+			 arr[0] = sum;
+			 arr[1] = sum/size;
+			 arr[2] = max;
+			 arr[3] = min;
 		 return arr;
 	 }
 }
