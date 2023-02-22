@@ -1,5 +1,8 @@
 package edu.kh.inheritance.dto;
 
+
+// final class : 상속이 불가능한 클래스
+//				 보통 코드 재사용을 원치 않을 때 사용
 public class Parent {
 
 	private int money = 400_000_000; //돈
@@ -19,6 +22,7 @@ public class Parent {
 	}
 	
 	//getter/ setter
+	//final 메서드 오버라이딩 불가
 	public int getMoney() {
 		return money;
 	}

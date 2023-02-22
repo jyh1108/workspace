@@ -180,7 +180,8 @@ public class StudentService {
 				 }
 			 int max =sumarr[0];
 			 int min =sumarr[0];
-			 for(int i=0; i<size;i++) {
+			 for(int i=
+					 0; i<size;i++) {
 			 if(sumarr[i]>max) {
 				 max = sumarr[i];
 			 }
