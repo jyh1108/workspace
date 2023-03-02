@@ -6,7 +6,9 @@ public class KhRun {
 
 	public static void main(String[] args) {
 		
-		KhView kv = new KhView();
+		KhView view = new KhView();
+		
+		view.displayMenu();
 	}
 
 }
