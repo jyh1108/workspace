@@ -10,7 +10,6 @@ public class APIService {
 	// 사용자가 쉽게 사용할 수 있도록 제공하는 것
 
 	private Student[] studentList = new Student[10];
-
 	public APIService() {
 		studentList[0] = new Student(1, 1, 1, "김영희");
 		studentList[1] = new Student(2, 3, 4, "홍길동");

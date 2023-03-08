@@ -16,7 +16,8 @@ public class IOrun {
 //		service.objectOutput();
 //		service.objectInput();
 //		service.listOutput();
-		service.listInput();
+//		service.listInput();
+		service.ex1();
 	}
 
 }

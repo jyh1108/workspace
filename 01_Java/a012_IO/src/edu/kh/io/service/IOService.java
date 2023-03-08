@@ -342,4 +342,13 @@ public class IOService {
 			}
 		}
 	}
+	public void ex1 () {
+		String cc = "";
+		int i =50;
+		switch(i) {
+		case 50 : cc += "x"; System.out.println(cc);
+		case 30 : cc += "y"; break;
+		default : cc += "z";System.out.println(cc);
+		}
+	}
 }
