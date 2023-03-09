@@ -6,17 +6,23 @@ import java.util.List;
 public class Building {
 
 	List<List<String>> list = new ArrayList<>(7);
-
 	List<List<String>> keyroomlist = new ArrayList<>(7);
+	List<List<String>> listed = new ArrayList<>(7);
 
 	public Building() {
 		for (int i = 0; i < 7; i++) {
 			list.add(new ArrayList<>());
+			listed.add(new ArrayList<>());
+
+			for (int j = 0; j <= 5; j++) {
+				listed.get(i).add("");
+			}
+
 		}
 		for (int i = 0; i < 7; i++) {
 			keyroomlist.add(new ArrayList<>());
 			if (i == 1 || i == 2 || i == 3) {
-				int key2 = (int) (Math.random() * 4 );
+				int key2 = (int) (Math.random() * 4);
 				for (int j = 0; j < 5; j++) {
 
 					if (key2 == j) {
@@ -26,7 +32,7 @@ public class Building {
 					}
 				}
 			} else {
-				int key1 = (int) (Math.random() * 5 );
+				int key1 = (int) (Math.random() * 5);
 				for (int j = 0; j < 5; j++) {
 					if (key1 == j) {
 						keyroomlist.get(i).add("열쇠를 발견하였습니다.");
@@ -36,7 +42,9 @@ public class Building {
 				}
 			}
 		}
-		
+		for (int j = 0; j <= 5; j++) {
+			listed.get(j).add("");
+		}
 
 		// 1층: 로비
 		list.get(0).add("로비");
@@ -77,17 +85,24 @@ public class Building {
 		list.get(6).add("");
 		list.get(6).add("");
 	}
-	public void keycheck() {
-		System.out.println(keyroomlist);
-	}
-
-	public void keyroom() {
-
-	}
 
 	public String getFloor(int asd, int dsa) {
 
 		return list.get(asd).get(dsa);
+	}
+
+	public String getFloor2(int asd, int dsa) {
+
+		return listed.get(asd).get(dsa);
+	}
+
+	public String keyCheck(int asd, int dsa) {
+
+		return keyroomlist.get(asd).get(dsa);
+	}
+
+	public void setFloor(int i, int j, String f) {
+		listed.get(i).set(j, f);
 	}
 
 	public String getRoom(int j) {
@@ -110,8 +125,12 @@ public class Building {
 
 	}
 	/*
-	 * 7 옥상정원 6 회의실1 회의실2 강당 화장실 탕비실 5 회의실1 회의실2 강당 화장실 탕비실 4 회장실 대회의실 강당 탕비실 3 회의실
-	 * 강의실 화장실 탕비실 2 회의실 강의실 화장실 탕비실 1 로비
+	 * 7 옥상정원 6 회의실1 회의실2 강당 화장실 탕비실 5 회의실1 회의실2 강당 화장실 탕비실 4 회장실 대회의실 강당 탕비실 "" 3
+	 * 회의실 강의실 화장실 탕비실 "" 2 회의실 강의실 화장실 탕비실 "" 1 로비
+	 * 
+	 * * 7 옥상정원 6 "" "" "" "" "" 5 "" "" "" "" "" 4 "" "" "" "" "" 3 "" "" "" "" ""
+	 * 2 "" "" "" "" "" 1 로비
+	 * 
 	 * 
 	 * 탕비실: 아이템이 랜덤으로 등장 / 좀비 확률 0% 화장실: 좀비 확률 10% 강의실: 좀비 확률 30% 회의실: 좀비 확률 50% 강당:
 	 * 좀비 확률 70% 대회의실: 좀비 확률 80% 회장실: 좀비 확률 100%
