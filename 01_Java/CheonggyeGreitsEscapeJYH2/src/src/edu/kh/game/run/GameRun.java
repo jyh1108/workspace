@@ -1,4 +1,4 @@
-package edu.kh.game.run;
+package src.edu.kh.game.run;
 
 import edu.kh.game.view.*;
 
@@ -7,7 +7,7 @@ public class GameRun {
    public static void main(String[] args) {
       GameView view = new GameView();
           
-//      view.displayMenu();
+      view.displayMenu();
       view.displayGame(); 
    }
 }
