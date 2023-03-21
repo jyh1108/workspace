@@ -10,7 +10,7 @@
 * 	2) 테이블의 진짜 모습을 감출 수 있어 보안상 유리
 *  
 * ** VIEW사용시 주의 사항 **
-* 1) 가상의 테이블 (실제X ) 이기 ㅐ문에 ALTER 구문 사용 불가.
+* 1) 가상의 테이블 (실제X ) 이기 때문에 ALTER 구문 사용 불가.
 * 2) VIEW를 이용한 DML(INSERT ,UPDATE,DELETE) 이 가능한 경우가 있지만
 * 	 제약이 많이 따르기 떄문에 조회(SELECT)용도로 대부분 사용
 * 
@@ -22,7 +22,7 @@
 * 
 *  1) OR REPLACE 옵션
 *     기존에 동일한 이름의 VIEW가 존재하면 이를 변경
-* 		없으면 샤로 생성
+* 		없으면 새로 생성
 * 	2) FORCE | NODORCD 옵션 :
 *  FORCE : 서브쿼리에 사용된 테이블이 존재하지 않아도 뷰 생성 
 *  NOFORCE(기본값) : 서브쿼리에 사용된 테이블이 존재해야만 뷰 생성
@@ -134,7 +134,7 @@ DEPT_TITLE CONSTRAINT TITLE_NN NOT NULL;
 --다시 VIEW를 이용해서 INSERT 
 INSERT INTO V_DCOPY2 VALUES('D0', 'L3');
 -->원본 테이블 DEPT_IDM, LOCATION_ID 컬럼에 'D0', 'L3' 삽입
-----> DEPT_TITLE 컬럼에는 NULL 삽임
+----> DEPT_TITLE 컬럼에는 NULL 삽입
 ----> 그런데.... DEPT_TITLE에는 NOT NULL 제약조건이 설정 되어 
 --   NULL 값이 삽입할 수 없음 
 
