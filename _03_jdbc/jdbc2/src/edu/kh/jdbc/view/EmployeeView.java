@@ -326,28 +326,30 @@ public class EmployeeView {
 		if (check == 'N') {
 			System.out.println("[취소되었습니다]");
 		}
-			if (check != 'Y') {
-				System.out.println("[잘못 입력 하셨습니다.]");
-				return;
-			}
+		if (check != 'Y') {
+			System.out.println("[잘못 입력 하셨습니다.]");
+			return;
+		}
 
-			// 서비스 호출 후 결과 반환 받기
-			try {
-				int result = service.retireEmployee(input);
-				String str = null;
-				if(result > 0) str = "[퇴사 처리가 완료 되었습니다.]";
-				else           str = "[사번이 일치하는 사원이 없습니다.]";
-				
-				System.out.println(str);
-				
-			} catch (SQLException e) {
-				System.out.println("\n[퇴사 처리중 예외 발생]\n");
-				e.printStackTrace();
-			}
+		// 서비스 호출 후 결과 반환 받기
+		try {
+			int result = service.retireEmployee(input);
+			String str = null;
+			if (result > 0)
+				str = "[퇴사 처리가 완료 되었습니다.]";
+			else
+				str = "[사번이 일치하는 사원이 없습니다.]";
 
-			// 성공[퇴사 처리가 완료되었습니다]
-			// 실패 : [사번이 일치하는 사원이 없습니다.]
-			// 예외 : [퇴사 처리 중 예외 발생]
-		
+			System.out.println(str);
+
+		} catch (SQLException e) {
+			System.out.println("\n[퇴사 처리중 예외 발생]\n");
+			e.printStackTrace();
+		}
+
+		// 성공[퇴사 처리가 완료되었습니다]
+		// 실패 : [사번이 일치하는 사원이 없습니다.]
+		// 예외 : [퇴사 처리 중 예외 발생]
+
 	}
 }
