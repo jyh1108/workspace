@@ -5,6 +5,7 @@ import static edu.kh.jdbc.common.JDBCTemplate.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import edu.kh.jdbc.model.dao.EmpDAO;
 import edu.kh.jdbc.model.dto.Emp;
@@ -68,9 +69,44 @@ public class EmpService {
 		 return result;
 	}
 
-	public int retireEmployee(int input) throws SQLException{
+	/**
+	 * @param input
+	 * @return check (0: 없는 사원, 1: 퇴직한 사원, 2: 재직중인 사원)
+	 * @throws SQLException
+	 */
+	public int checkEmployee(int input) throws SQLException{
 		Connection conn = getConnection();
-		int result = dao.retireEmployee(conn, input);
-		return 0;
+		int check = dao.checkEmployee(conn, input);
+		close(conn);
+		return check;
 	}
+
+	/** 퇴직 처리 서비스
+	 * @param input
+	 * @throws SQLException
+	 */
+	public void retireEmployee(int input) throws SQLException{
+
+		Connection conn = getConnection();
+		
+		 dao.retireEmployee(conn, input);
+		//트랜잭션 처리
+		 // 예외 발생시 SQL 수행이 정상적으로 진행되지 않음
+		commit(conn);
+	
+		close(conn);
+	}
+
+	/** 부서별 통계 조회 서비스
+	 * @return mapList
+	 * @throws SQLException
+	 */
+	public List<Map<String, Object>> selectDepartment() throws SQLException{
+
+		Connection conn = getConnection();
+		List<Map<String, Object>> mapList = dao.selectDepartment(conn);
+		close(conn);
+		return mapList;
+	}
+
 }

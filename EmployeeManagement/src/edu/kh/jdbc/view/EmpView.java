@@ -1,9 +1,12 @@
 package edu.kh.jdbc.view;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import edu.kh.jdbc.model.dto.Emp;
 import edu.kh.jdbc.model.service.EmpService;
@@ -115,6 +118,7 @@ public class EmpView {
 				case 8:
 					break;
 				case 9:
+					selectDepartment();
 					break;
 				case 0:
 					System.out.println("\n[프로그램을 종료합니다...]\n");
@@ -316,28 +320,95 @@ public class EmpView {
 		System.out.println("퇴직 처리할 사원의 사번 입력 : ");
 		int input = sc.nextInt();
 
-		System.out.println("정말 퇴직 처리 하시겠습니까?(Y/N)");
-		char check = sc.next().toUpperCase().charAt(0);
-		if (check == 'N') {
-			System.out.println("[취소되었습니다]");
-		}
-		if (check != 'Y') {
-			System.out.println("[잘못 입력 하셨습니다.]");
-			return;
-		}
+
+
 		try {
-			int result = service.retireEmployee(input);
-			String str = null;
-			if (result > 0)
-				str = "[퇴사 처리가 완료 되었습니다.]";
-			else
-				str = "[사번이 일치하는 사원이 없습니다.]";
+			int check = service.checkEmployee(input);
+			if(check ==0) {
+				System.out.print("[사번이 일치하는 사원이 존재하지 않습니다.]");
+				return;
+			}
+			if(check == 1 ) {
+				System.out.println("[이미 퇴직 처리된 사원입니다.]");
+				return;
+			}
 
-			System.out.println(str);
-
+			System.out.println("정말 퇴직 처리 하시겠습니까? (y/n) : ");
+			char ch = sc.next().toLowerCase().charAt(0);
+			
+			if(ch =='n') {
+				System.out.println("[취소 되었습니다.]");
+				return;
+			}
+			if(ch != 'y') {
+				System.out.println("[잘못 입력 하셨습니다]");
+				return;
+			}
+			
+			// 'y' 인경우 서비스 호출 
+			
+			
+			service.retireEmployee(input);
+			// -> 앞서서 사번에 대한 검증이 끝난 상황
+			// -> 사번이 없어서 수정이 실패하는 경우는 생각할 필요 없음
+			// --> 퇴직 서비스는 성공 또는 예외만 존재 
+			// --> 반환 값이 따로 필요 없음
+			System.out.println("[퇴직 처리 되었습니다.]");
 		} catch (SQLException e) {
 			System.out.println("\n[퇴직 처리중 예외발생]\n");
 			e.printStackTrace();
 		}
+	}
+	private void selectDepartment() {
+		System.out.println("\n******* 부서별 통계 조회 ************\n");
+		
+		//DTO가 없을 때 Map을 사용하는 이유
+		// 1. DTO를 작성하는게 코드 낭비인 경우
+		// 2. DTO와 MAP의 구조가 유사하기 때문에
+		
+//		Emp emp = new Emp();
+//		
+//		emp.setEmpId(200);
+//		emp.setEmpName("고길동");
+//		
+//		emp.getEmpId();
+//		emp.getEmpName();
+//		
+//		//top. DTO 필드를 map의 key라고 생각 
+//		
+//		Map<String, Object> map = new HashMap<>();
+//		map.put("empId", 200);
+//		map.put("empName", "고길동");
+//		
+//		map.get("empId");
+//		map.get("empName");
+		
+		//다량의 객체 저장
+//		List<Emp> empList;
+//		List<Map<String,Object>>  mapList;
+		
+		//서비스 호출
+		try {
+			List<Map<String, Object>> mapList = service.selectDepartment();
+			
+			//조회 결과 출력 
+			for(Map<String, Object> map : mapList) {
+//				System.out.printf("%s / %d / %d\n", 
+//						map.get("deptTitle"),
+//						map.get("count"),
+//						map.get("avg"));
+				Set<String> set = map.keySet(); // map에서  key만 얻어와 반환
+								// -> deptTitle, count, avg 순서
+				
+				for(String key : set) {
+					System.out.print(map.get(key) +" " );
+				}
+				System.out.println();
+			}
+		} catch (SQLException e) {
+			System.out.println("[부서별 통계 조회 중 예외 발생]");
+			e.printStackTrace();
+		}
+		
 	}
 }
