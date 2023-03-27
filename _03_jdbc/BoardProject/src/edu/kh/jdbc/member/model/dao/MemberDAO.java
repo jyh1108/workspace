@@ -63,4 +63,68 @@ public class MemberDAO {
 		}
 		return memberList;
 	}
+
+	/**
+	 * @param conn
+	 * @param memberName
+	 * @param memberGender
+	 * @param memberNo
+	 * @return
+	 * @throws Exception
+	 */
+	public int updateMember(Connection conn, String memberName, String memberGender, int memberNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			String sql =prop.getProperty("updateMember");
+			
+			pstmt = conn.prepareStatement(sql);	
+
+			pstmt.setString(1, memberName);
+			pstmt.setString(2, memberGender);
+			pstmt.setInt(3, memberNo);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+
+	public int updatePassword(Connection conn, String mamberPw, String memberPw1, int memberNo)throws Exception {
+		
+		int result = 0;
+		try {
+			String sql =prop.getProperty("updatePassword");
+			
+			pstmt = conn.prepareStatement(sql);	
+			
+			pstmt.setString(1, memberPw1);
+			pstmt.setString(2, mamberPw);
+			pstmt.setInt(3, memberNo);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+
+	public int unRegisterMember(Connection conn, String memberPw, int memberNo) throws Exception{
+		int result = 0;
+		try {
+			String sql =prop.getProperty("unRegisterMember");
+			
+			pstmt = conn.prepareStatement(sql);	
+			
+			pstmt.setString(1, memberPw);
+			pstmt.setInt(2, memberNo);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 }
