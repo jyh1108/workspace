@@ -3,6 +3,9 @@ package edu.kh.jdbc.main.view;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import javax.swing.border.Border;
+
+import edu.kh.jdbc.board.view.BoardView;
 import edu.kh.jdbc.common.Session;
 import edu.kh.jdbc.main.model.service.MainService;
 import edu.kh.jdbc.member.model.dto.Member;
@@ -17,6 +20,7 @@ public class MainView {
 	// 회원 기능 화면 객체 생성
 	private MemberView memberView = new MemberView();
 	
+	private BoardView boardView = new BoardView();
 	
 	
 	/**
@@ -71,6 +75,7 @@ public class MainView {
 						memberView.memberMenu();
 						break;
 					case 2:
+						boardView.boardMenu();
 						break;
 					case 3:
 						System.out.println("\n===로그아웃 되었습니다===\n");

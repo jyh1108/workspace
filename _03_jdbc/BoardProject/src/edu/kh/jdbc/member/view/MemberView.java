@@ -253,7 +253,7 @@ public class MemberView {
 				System.out.println("\n === 탈퇴 되었습니다..... =\n");
 				// 로그아웃
 				Session.loginMember = null;
-				return false;
+				return true;
 			}else {
 				System.out.println("\n*** 비밀번호가 일치하지 않습니다. ***\n");
 				

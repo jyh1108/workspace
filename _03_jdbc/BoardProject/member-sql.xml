@@ -28,7 +28,7 @@
 	
 	<entry key="unRegisterMember">
 		UPDATE "MEMBER"
-		SET MEMBER_PW = ?
+		SET UNREGISTER_FL = 'Y'
 		WHERE MEMBER_PW = ?
 		AND MEMBER_NO = ?
 	</entry>
