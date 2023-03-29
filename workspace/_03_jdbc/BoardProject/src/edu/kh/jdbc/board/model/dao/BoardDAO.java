@@ -19,8 +19,6 @@ public class BoardDAO {
 	private Statement stmt;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-	
-	
 
 	// xml에 작성된 sql을 읽어와 저장할 객체 참조 변수
 	private Properties prop;
