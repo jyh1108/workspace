@@ -26,8 +26,8 @@
 
 	<entry key="updateReadCoubt">
 		UPDATE "BOARD"
-		SET READ_COUNT = READ_COUNT +1 --이전 조회수
-		+1 값으로 수정
+		SET READ_COUNT = READ_COUNT +1
+	
 		WHERE BOARD_NO = ?</entry>
 
 	<entry key="updateBoard">
