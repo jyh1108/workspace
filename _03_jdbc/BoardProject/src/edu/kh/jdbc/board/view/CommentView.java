@@ -118,7 +118,6 @@ public class CommentView {
 
 		StringBuffer sb = new StringBuffer();
 
-		if(Session.loginMember.getMemberNo() == )
 		System.out.println("<!wq 입력 시 종료>");
 		while (true) {
 			String str = sc.nextLine();
