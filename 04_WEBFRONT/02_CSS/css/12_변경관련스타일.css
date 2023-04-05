@@ -1,0 +1,113 @@
+img{
+    width: 250px;
+    height: auto;
+    /* 이미지는 고유한 크기와 가로/세로 비율이 존재함 
+        -> width 지정 후 height를 미지정 또는 auto로 설정하면
+        기준 이미지 비율에 맞게 height가 자동 조정*/
+}
+
+/* 
+    css속성은 모든 브라우저에서 동일하게 처리하지 않고 각자의
+    방법으로 처리하거나,호환되지 않는경우가 있다
+
+    이를 대비하기 위해 각 회사별 브라우저 호환을 위한 작성 방식이 존제
+
+*/
+
+/* 좌우 이동 */
+.trans-x-2d:hover{
+    -ms-transform: translateX(100px);
+
+    transform: translateX(100px);
+}
+/* 상하 이동 */
+.trans-x-2d:hover{
+    transform: translateY(100px);
+}
+/* 대각선 이동 */
+.trans-d-2d:hover{
+    transform: translate(100px, 100px);
+}
+
+/* 가로 방향 확대/축소 */
+.trans-x-scale-2d{
+                /* 배율,1 == 100%*/
+    transform: scaleX(0.2);
+}
+/* 세로 방향 확대/축소 */
+.trans-y-scale-2d{
+    /* 배율,1 == 100%*/
+transform: scaleX(1.3);
+}
+/* 가로,세로 방향 확대/축소 */
+.trans-scale-2d{
+transform: scaleX(2.2);
+    margin : 100px 0;
+}
+/* 요소 회전 */
+.trans-rotata{
+    transform: rotata(180deg);
+}
+
+/* 3차원 변형 */
+
+/* x,y,z, 축 이동 */
+.trans-3d:hover{
+    /*   */
+    transform: perspective(300px) translate3d(50px, 50px, 100px);
+    
+}
+
+.trans-rotata-x-3d{
+    transform: perspective(300px) rotateX(-45deg);
+}
+.trans-rotata-z-3d{
+    transform: perspective(300px) rotateZ(-45deg);
+}
+/* xyz회전 */
+.ㅅ
+.trans-rotata-3d{
+    transform: perspective(300px) rotate3d(0.3,1,3,55beg);
+
+}
+
+
+/* transition */
+.box{
+    width: 150px;
+    height: 150px;
+    border: solid #000;
+    background-color: royalblue;
+
+    /* 스타일이 변형되는 기간(시간)ㅇ */
+    transition-duration: 1s;
+    text-align: center;
+}
+
+.test1:hover{
+    background-color: yellow;
+}
+.test2:hover{
+     transform: rotate(720deg);
+     background-color: seagreen;
+    border-radius: 50%;
+}
+.test3{
+    transition-duration: 3s ;
+
+    transition-timing-function: cubic-bezier(0.3,0.3,1,0.5);
+}
+.test3:hover{
+    transform:rotate(1080deg);
+    background-color: green;
+}
+
+/* 변형 딜레이 */
+.test4{
+    transition-delay: 2s;
+    border-radius: 50%;
+}
+
+.test4:hover{
+    transform: translateX(150px) rotate(180deg); 
+}

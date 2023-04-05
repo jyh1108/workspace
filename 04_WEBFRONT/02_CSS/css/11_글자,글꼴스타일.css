@@ -1,0 +1,39 @@
+/* color 속성 */
+#colorList > li{
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+#colorList > li:nth-child(1){color :red }
+#colorList > li:nth-child(2){color :rgb(50,153,34) }
+#colorList > li:nth-child(3){color : rgba(255,0,0,0.5)}
+#colorList > li:nth-child(4){color : #abc}
+#colorList > li:nth-child(5){color : #543184}
+#colorList > li:nth-child(6){color : hsl(351,100%,50%)}
+#colorList > li:nth-child(7){color : hsl(138,100%,50%,0.3)}
+
+#decorationList > li:nth-child(1){text-decoration: overline;}
+#decorationList > li:nth-child(2){text-decoration: line-through;}
+#decorationList > li:nth-child(3){text-decoration: underline;}
+#decorationList > li:nth-child(4){text-decoration: none;}
+
+/* text -align */
+#alignTest>p:nth-child(1){text-align: left;}
+#alignTest>p:nth-child(1){text-align: right;}
+#alignTest>p:nth-child(1){text-align: center;}
+#alignTest>p:nth-child(1){text-align: center;}
+
+/* line-height
+
+*/
+#lineHeight{ line-height: 30px;}
+
+#lettrtSpacing{letter-spacing: -10px;}
+
+/* font-fmaiy */
+
+#fontFamily>li:nth-child(1){font-family: '궁서';}
+#fontFamily>li:nth-child(2){font-family: '궁서체';}
+#fontFamily>li:nth-child(3){font-family: '동현체,궁서체';}
+#fontFamily>li:nth-child(4){font-family: '동현체,궁서체';}
