@@ -1,0 +1,13 @@
+.grid-contaner{
+    background-color: #ccc;
+    display: grid;
+
+    grid-auto-rows: 100px;
+
+    gap : 10px;
+}
+
+.item1{
+    /* 1,2열 병합 */
+    grid-column: 3.5;
+}
