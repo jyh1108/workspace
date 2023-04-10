@@ -17,14 +17,14 @@ nav {
 
 .content {
     display: flex;
+    
 }
 
 .friendNav {
     background-color: white;
     border-right: 1px solid black;
     width: 360px;
-    height: 1500px;
-    display: flex;
+    height: 100vh;
     min-width: 360px;
 }
 
@@ -57,7 +57,7 @@ nav {
     width: 100%;
     background-color: #EBEDF0;
     display: flex;
-    height: auto;
+    height: 100vh;
     flex-wrap: wrap;
 }
 
@@ -83,30 +83,20 @@ ul li a img {
     width: 196.67px;
     height: 348.67px;
     margin: 10px;
-
-    flex-wrap: nowrap;
-    flex-wrap: wrap;
-
-    align-content: flex-start;
-    align-content: flex-end;
-    align-content: center;
-    align-content: space-around;
-    
-
-    /* overflow: auto; 내용이 테두리를 넘어서면 스크롤이 자동으로 생성 */
 }
 
 .pick {
     width: 194.67px;
     height: 194.67px;
     background-color: red;
+    border-radius: 10px 10px 0 0;
 }
 
 .boxname {
     width: 194.67px;
     height: 152px;
     background-color: white;
-
+    border-radius: 0 0 10px 10px;
 
 }
 
