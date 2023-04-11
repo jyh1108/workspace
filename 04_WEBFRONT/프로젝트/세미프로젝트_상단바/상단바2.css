@@ -1,0 +1,165 @@
+@media screen {
+    
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container,.home-logo,.search-area,.top-menu{
+    border: 1px, solid black;
+}
+
+
+.container {
+    /* background-color: royalblue; */
+    border-bottom: 1px solid black;
+    min-width: 1104;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: fixed;
+    background-color: white;
+
+}
+
+
+/* 홈 로고 영역 */
+.home-logo {
+    height: 50px;
+    display: grid;
+}
+
+.home-logo>a{
+    height: 50px;
+    align-items: center;
+    padding: 5px;
+    padding-left: 100px;
+}
+
+.home-logo>a>img{
+    height: 35px;
+    display: grid;
+    grid-template-rows: auto;
+    align-content: center;
+}
+
+/* 검색창 영역 */
+
+.search-area{
+    display: flex;
+    justify-content: center;
+    padding: 6px;
+    padding-left: 103px;
+    /* border: 1px solid black; */
+    height: 50px;
+    width: 1120px;
+    
+
+}
+
+.search-area #searchBox{
+    border: 1px solid #455ba8;
+    border-radius: 5px;
+    /* padding-left: 5px;
+    padding-right: 5px; */
+    height: 35px;
+    width: 450px;
+    display: grid;
+    align-items: center;
+    
+}
+
+#query{
+    border: none;
+    outline: 0;
+
+    font-size: 15px;
+    font-weight: lighter;
+    
+    width: 100%;
+    height: 25px;
+
+    display: grid;
+    align-items: center;
+    
+    padding-left: 25px;
+}
+
+#searchBtn{
+    display: none;
+}
+
+input{
+    background-image: url(/images/images/search.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 16px;
+}
+
+/* 상단 메뉴 탭 영역 */
+
+
+.top-menu>ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding-right: 25px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 49px;
+    column-gap: 40px;
+}
+
+.top-menu>.menu>li>a:hover{
+    height: 35px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+
+    display: inline-block;
+
+    background-color:#ccc;
+    transition-duration: 0.5s;
+}
+
+
+.top-menu>.menu>li:nth-child(1)>a>img{
+    height: 35px;
+    padding: 3px;
+
+}
+
+.top-menu>.menu>li:nth-child(2)>a>img{
+    height: 35px;
+    padding: 3px;
+    
+}
+.top-menu>.menu>li:nth-child(3)>a>img{
+    height: 35px;
+    padding: 3px;
+    
+    filter: invert(34%) 
+    sepia(82%) 
+    saturate(369%) 
+    hue-rotate(178deg) 
+    brightness(103%) 
+    contrast(85%);
+}
+.top-menu>.menu>li:nth-child(4)>a>img{
+    height: 35px;
+    padding: 3px;
+    
+}
+.top-menu>.menu>li:nth-child(5)>a>img{
+    height: 35px;
+    padding: 3px;
+    
+}
+
+
+}
+

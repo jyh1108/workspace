@@ -4,15 +4,6 @@
     margin: 0;
 }
 
-nav {
-    /*임시 상단바*/
-    position: sticky;
-    top: 0;
-    height: 40px;
-    z-index: 1000;
-    background-color: white;
-    border-bottom: 1px solid black;
-}
 
 
 .content {
@@ -30,7 +21,7 @@ nav {
 
 .friendNav>ul {
     background-color: white;
-    position: fixed;
+    position: fixed ;
     width: 360px;
     flex-direction: column;
     align-items: flex-start;
@@ -83,12 +74,17 @@ ul li a img {
     width: 196.67px;
     height: 348.67px;
     margin: 10px;
+    margin-left: 20px;
 }
 
-.pick {
+
+.tbox{
     width: 194.67px;
     height: 194.67px;
-    background-color: red;
+}
+.pick{
+    width: 194.67px;
+    height: 194.67px;
     border-radius: 10px 10px 0 0;
 }
 
@@ -103,6 +99,8 @@ ul li a img {
 .namebar {
     width: 170.67px;
     height: 21px;
+    padding-top: 2px;
+    padding-left: 10px;
 }
 
 .frName {
@@ -157,4 +155,21 @@ ul li a img {
 
 .checkNo:active {
     transform: scale(0.95);
+}
+
+.together{
+    padding-top: 8px;
+    padding-left: 10px;
+    color: #65676b;
+    font-size: 15px;
+}
+
+.topfr{
+    width: 100vw;
+    height: 26px;
+    margin-top: 30px;
+    font-size: 23px;
+    color: #050505;
+    margin-left: 20px;
+
 }
