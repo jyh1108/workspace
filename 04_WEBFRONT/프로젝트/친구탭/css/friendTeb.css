@@ -4,17 +4,17 @@
     margin: 0;
 }
 html,body, main{
-    height: 100%;
+    height: 937px;
 }
 .content{
-    height: 100%;
+    height: 937px;
 }
 
 .friendNav {
     background-color: white;
     border-right: 1px solid black;
     width: 360px;
-    height: 100%;
+    height: 937px;
     min-width: 360px;
     position: fixed;
 }
@@ -45,9 +45,9 @@ html,body, main{
 
 
 .friendContent {
-    width: 100%;
+    width: 1309px;
     display: flex;
-    height: calc(100%-60px);
+    height: 877px;
     
     flex-wrap: wrap;
 
@@ -174,7 +174,7 @@ ul li a img:hover{
 }
 
 .topfr {
-    width: calc(100%-360px);
+    width: 1309px;
     height: 26px;
     padding: 30px;
     font-size: 23px;
@@ -182,7 +182,7 @@ ul li a img:hover{
 }
 
 .topdiv {
-    width: calc(100%-360px);
+    width: 1309px;
     margin-left: 360px;
     background-color: #EBEDF0;
     height: 100%;

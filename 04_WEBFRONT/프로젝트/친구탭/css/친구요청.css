@@ -63,3 +63,22 @@ html,body, main{
   border: 0.5px solid #e3e4e6; 
 }
 
+#friendRQ{
+  color: #050505;
+  font-weight: bold;
+  font-size: 17px;
+
+}
+#friendRQBox{
+  margin-left: 11px ;
+  padding-top: 14px;
+}
+
+#viewRQbox{
+  margin-left: 11px;
+  margin-top: 5px;
+}
+#viewRQ{
+  font-size: 13px;
+  color: #1876f2;
+}
