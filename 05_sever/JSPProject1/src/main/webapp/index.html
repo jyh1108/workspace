@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSP Porject1</title>
 </head>
+
 <body>
     <h1>로그인 테스트</h1>
     <pre>
@@ -20,7 +22,7 @@
         <button>Login</button>
 
     </form>
-    
+
     <hr>
 
     <h1>a태그 클릭 시 화면 전환하기</h1>
@@ -28,5 +30,61 @@
     <h3 style="color: red">a,js코드(location) 요청은 모두 get 방식</h3>
     <a href="/test/result">페이지 이동</a>
 
+    <hr>
+
+    <h1>피자 주문하기</h1>
+
+    <form action="/pizzaOrder" method="POST">
+        피자 :
+        <select name="pizza">
+            <option value="1">치즈피자(8000)</option>
+            <option value="2">콤피네이션 피자(9000)</option>
+            <option value="3">핫치킨 피자(10000)</option>
+        </select>
+
+        <br><br>
+
+        사이즈 <br>
+        <label>
+            R <input type="radio" name="size" value="R">
+        </label>
+        <label>
+            L <input type="radio" name="size" value="L">
+        </label>
+
+        <br><br>
+
+        수량 :
+        <button id="minus" type="button">-</button>
+        <span id="amount">0</span>
+        <button id="plus" type="button">+</button>
+        <br><br>
+
+        <button>주문하기</button>
+
+        <input type="hidden" name="amount" value="0">
+    </form>
+
+    <script>
+        const plus = document.getElementById("plus");
+        const minus = document.getElementById("minus");
+        const amount = document.getElementById("amount");
+        const input = document.querySelector("[name='amount']");
+
+        plus.addEventListener("click", () => {
+            amount.innerText++;
+            input.value = amount.innerText;
+        })
+
+        minus.addEventListener("click", () => {
+            if (amount.innerText == 0) return;
+
+            amount.innerText--;
+            input.value = amount.innerText
+
+        })
+    </script>
+
 </body>
+
 </html>
