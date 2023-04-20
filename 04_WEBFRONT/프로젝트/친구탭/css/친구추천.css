@@ -79,24 +79,15 @@ main {
 #friendRQBox {
     margin-left: 11px;
     padding-top: 14px;
+    margin-bottom: 20px;
 }
 
-#viewRQbox {
-    margin-left: 11px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
 
 
 #viewRQ {
     font-size: 13px;
 }
 
-#viewRQ a {
-    text-decoration: none;
-    color: #1876f2;
-
-}
 
 /* 요청 프사,확인,삭제 박스 */
 .frtopdiv {
