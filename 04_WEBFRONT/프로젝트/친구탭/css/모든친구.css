@@ -159,8 +159,13 @@ main {
     height: 83px;
     display: flex;
     margin-left: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
+.frtopdiv:hover {
+    background-color: #EBEDF0;
+}
 /* 프사 */
 .proimg {
     width: 60px;
@@ -183,7 +188,7 @@ main {
     color: #050505;
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .namecount{
@@ -191,14 +196,25 @@ main {
     align-content: center;
 }
 
+/* .pulsnav:hover{
+    background-color: #EBEDF0;
+} */
+
+.pulsnav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 22.5px;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 15px;
+    margin-left: 180px;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
 .pulsnav>img{
     width: 25px;
     height: 25px;
     
-}
-.pulsnav{
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    margin-left: 180px;
 }
