@@ -3,7 +3,6 @@ const pulsnav = document.getElementsByClassName("pulsnav")[0];
 
 frtopdiv.onmouseover = function (){
   pulsnav.style.backgroundColor ="#EBEDF0";
-  console.log("색바꾸기");
 }
 frtopdiv.onmouseout = function(){
   pulsnav.style.backgroundColor ="#ffffff";

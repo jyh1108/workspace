@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>friendTab</title>
     <link rel="stylesheet" href="../css/friendTeb.css">
-    <link rel="stylesheet" href="../../세미프로젝트_상단바/상단바2.css">
-    <script src="../js/friendTeb.js"></script>
+    <link rel="stylesheet" href="../css/상단바2.css">
 </head>
 
 <body>
@@ -19,19 +18,24 @@
     - 사용자 차단(해당 사용자 게시글 안보이게)  -->
 
     <main>
-        <!-- <header class="container">
+        <header id="container">
 
             <div class="home-logo">
-                <a href="#"><img src="/images/images/facebook-logo.png"></a>
+                <a href="#"><img src="../../세미프로젝트_상단바/images/facebook-logo.png"></a>
             </div>
 
             <div class="search-area">
                 <form action="#" method="GET">
                     <fieldset id="searchBox">
 
-                        <input type="search" name="query" id="query" autocomplete="off" placeholder="semi 검색">
+                        <div>
+                            <input type="search" name="query" id="query" autocomplete="off" placeholder="semi 검색">
+                            <button type="submit" id="searchBtn"></button>
 
-                        <button type="submit" id="searchBtn"></button>
+                            <!-- 검색어 저장 영역 -->
+                        </div>
+                        <div class="suggestions suggestions_pannel">
+                        </div>
 
                     </fieldset>
                 </form>
@@ -39,49 +43,67 @@
 
             <div class="top-menu">
                 <ul class="menu">
+                    <!-- 버튼 영역  -->
+
+                    <!-- 홈 버튼 -->
                     <li>
                         <a href="#">
-                            <img src="/images/images/home-normal.png">
+                            <img src="../../세미프로젝트_상단바/images/home-normal.png">
                         </a>
+
                     </li>
 
-                    <li>
-                        <a href="/친구탭/html/friendTeb.html">
-                            <img src="/images/images/friends.png">
-                        </a>
-                    </li>
-
+                    <!-- 친구 버튼  -->
                     <li>
                         <a href="#">
-                            <img src="/images/images/group.png">
+                            <img src="../../세미프로젝트_상단바/images/friends.png">
                         </a>
                     </li>
-
-                    <li>
-                        <a href="#">
-                            <img src="/images/images/user-deafult.png">
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <img src="/images/images/menu.png">
-                        </a>
-                    </li>
-
                 </ul>
+            </div>
 
-            </div> -->
 
-        <!-- </header> -->
+            <div id="dropdownBox">
+                <!-- 알림 버튼 -->
+                <div id="dropdown1">
+                    <button onclick="bell()" id="dropBtn1"><img src="../../세미프로젝트_상단바/images/bell.png" id="image1"></button>
+
+                    <!-- 알림 버튼 클릭 시 하위 메뉴 -->
+                    <div id="bellDropdown" class="dropdown-content1">
+                        <a href="#">알림 내용</a>
+                    </div>
+                </div>
+
+                <div id="dropdown2">
+                    <!-- 내정보 버튼 -->
+                    <button onclick="my()" id="dropBtn2"><img src="../../세미프로젝트_상단바/images/user-deafult.png"
+                            id="image2"></button>
+
+                    <!-- 내정보 버튼 클릭 시 하위 메뉴 -->
+                    <div id="myDropdown" class="dropdown-content2">
+                        <a href="#">내정보</a>
+                        <a href="#">설정</a>
+                        <a href="#">의견 보내기</a>
+                        <a href="#">1:1문의</a>
+                        <a href="#">로그아웃</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ------------------------------------------------------------------- -->
         <div class="content">
             <div class="friendNav">
                 <ul>
                     <strong id="friend">친구</strong>
-                    <li><a href="../html/friendTeb.html"><img src="../../img/free-icon-friend-5003758.png" alt=""> 홈</a></li>
-                    <li><a href="../html/친구요청.html"><img src="../../img/free-icon-add-friend-3394625.png" alt=""> 친구요청</a></li>
-                    <li><a href="../html/친구추천.html"><img src="../../img/free-icon-friends-2583035.png" alt=""> 친구추천</a></li>
-                    <li><a href="../html/모든친구.html"><img src="../../img/free-icon-friends-7596695.png" alt=""> 모든친구</a></li>
+                    <li><a href="../html/friendTeb.html"><img src="../../img/free-icon-friend-5003758.png" alt=""> 홈</a>
+                    </li>
+                    <li><a href="../html/친구요청.html"><img src="../../img/free-icon-add-friend-3394625.png" alt="">
+                            친구요청</a></li>
+                    <li><a href="../html/친구추천.html"><img src="../../img/free-icon-friends-2583035.png" alt=""> 친구추천</a>
+                    </li>
+                    <li><a href="../html/모든친구.html"><img src="../../img/free-icon-friends-7596695.png" alt=""> 모든친구</a>
+                    </li>
                 </ul>
             </div>
             <div class="topdiv">
@@ -180,6 +202,8 @@
             </div>
         </div>
     </main>
+    <script src="../js/상단바2.js"></script>
+    <script src="../js/friendTeb.js"></script>
 </body>
 
 </html>
