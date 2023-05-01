@@ -10,4 +10,23 @@ public interface MyPageService {
 	 */
 	int updateInfo(Member updateMember);
 
+	
+	/** 비민번호 변경
+	 * @param currentPw
+	 * @param newPw
+	 * @param memberNo
+	 * @return result
+	 */
+	int changePw(String currentPw, String newPw, int memberNo);
+
+
+	/**
+	 * @param memberPw
+	 * @param memberNo
+	 * @return
+	 */
+	int secession(String memberPw, int memberNo); 
+
+
+
 }

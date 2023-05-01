@@ -145,5 +145,7 @@
             }).open();
         }
     </script>
+
+    <script src ="/resources/js/member/signUp.js"> </script>
 </body>
-</html>2
+</html>

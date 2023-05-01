@@ -209,12 +209,17 @@ main {
     height: 25px;
     margin-bottom: 15px;
     margin-left: 180px;
-    border: none;
     background-color: #ffffff;
     border-radius: 50%;
 }
 .pulsnav>img{
     width: 25px;
     height: 25px;
-    
+}
+
+/* ... 클릭했을때 나오는거  */
+#frmenu{
+    width: 280px;
+    height: 280px;
+    border: black solid 1px;
 }
