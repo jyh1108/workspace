@@ -127,9 +127,10 @@ public class MyPageController {
 		
 		if(result > 0) { //변경 성공
 			message = "비밀번호가 변경 되었습니다.";
+			path += "info";
 		}else {// 변경 실패
 			message = "현재 비밀번호가 일치하지 않습니다.";
-			path += "chagePw";
+			path += "changePw";
 		}
 		ra.addFlashAttribute("message",message);
 		

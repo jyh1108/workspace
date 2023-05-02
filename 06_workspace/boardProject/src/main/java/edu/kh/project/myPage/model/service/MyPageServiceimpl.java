@@ -55,7 +55,7 @@ public class MyPageServiceImpl implements MyPageService{
 		// 2. 비밀번호 변경(UPDATE DAO 호출) -> 결과 반환
 		if(bcrypt.matches(currentPw, encPw)) {
 			//2. 비밀번호 변경(update dao 호출) -> 결과 반환
-			return dao.changePw( bcrypt.encode(encPw), memberNo);
+			return dao.changePw( bcrypt.encode(newPw), memberNo);
 		}
 		
 		
