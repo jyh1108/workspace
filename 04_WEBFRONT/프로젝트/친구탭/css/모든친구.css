@@ -161,6 +161,7 @@ main {
     margin-left: 15px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .frtopdiv:hover {
@@ -219,7 +220,7 @@ main {
 }
 
 /* ... 클릭했을때 나오는거  */
-#frmenu{
+.frmenu{
     position: absolute;
     left: 330px;
     margin-top: 50px;
@@ -230,13 +231,23 @@ main {
     display: none;
     
 }
-#noProfile{
+
+.noProfile{
     display: flex;
     align-items: center;
     height: 50%;
+    cursor: pointer;
 }
-#noFriend{
+.noFriend{
     display: flex;
     align-items: center;
     height: 50%;
+    cursor: pointer;
+}
+
+.noFriend:hover {
+    background-color: #EBEDF0;
+}
+.noProfile:hover {
+    background-color: #EBEDF0;
 }

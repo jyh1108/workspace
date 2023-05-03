@@ -388,17 +388,7 @@ public class MemberController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	/* 스프링 예외 처리 방법(3종류, 우선 순위, 중복 사용)
 	 * 
