@@ -222,8 +222,8 @@ main {
 /* ... 클릭했을때 나오는거  */
 .frmenu{
     position: absolute;
-    left: 330px;
-    margin-top: 50px;
+    left: 340px;
+    margin-top: 40px;
     width: 240px;
     height: 100px;
     border: black solid 1px;
