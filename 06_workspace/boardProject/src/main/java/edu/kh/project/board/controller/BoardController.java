@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.Cookie;
@@ -77,22 +78,36 @@ public class BoardController {
 
 	// 해결 방법 : @PathVariable 지정시 표현식 사용
 	// {키: 정규표
-//	게시글 목록 조회
-	@GetMapping("/{boardCode:[0-9]+}") // boardCode는 1자리 이상 출력
-	public String selectBoardList(@PathVariable("boardCode") int boardCode,
-			@RequestParam(value = "cp", required = false, defaultValue = "1") int cp, Model model) {
-		// 보드코드 확인
-//		System.out.println("boardCode : " + boardCode);
+	// 게시글 목록 조회
+	   @GetMapping("/{boardCode:[0-9]+}") // 주소를 값으로 쓸 수 있게 하는 코드 [ boardCode는 1자리 이상 숫자 / + 1개이상->오로지 숫자만]
+	   public String selectBoardList(@PathVariable("boardCode") int boardCode,
+	         @RequestParam(value = "cp", required = false, defaultValue = "1") int cp // 요청 파라미터
+	         , Model model
+	         , @RequestParam Map<String, Object> paramMap // 파라미터 전부 다 담겨있음  
+	         ) {
 
-		// 게시글 목록 조회 서비스 호출
-		Map<String, Object> map = service.selectVoardList(boardCode, cp);
+	      // boardCode 확인
+	      // System.out.println("boardCode : " + boardCode);
+	      
+	      if(paramMap.get("key") == null) { // 검색어가 없을 때(검색 X)
 
-		// 조회 결과를 request scope에 세팅 후 forward
+	      // 게시글 목록 조회 서비스 호출
+	      Map<String, Object> map = service.selectBoardList(boardCode, cp);
 
-		model.addAttribute("map", map);
-
-		return "board/boardList";
-	}
+	      // 조회 결과를 request scope에 세팅 후 forward
+	      model.addAttribute("map", map);
+	      
+	      }else {// 검색어가 있을 때(검색 O)
+	         
+	         paramMap.put("boardCode", boardCode);
+	         
+	         Map<String, Object> map = service.selectBoardList(paramMap, cp); // 오버로딩
+	         
+	         model.addAttribute("map",map);
+	      }
+	      
+	      return "board/boardList";
+	   }
 
 	// @PathVariable : 주소에 지정된 부분을 변수에 저장
 	// + request scope 세팅
@@ -245,4 +260,14 @@ public class BoardController {
 		System.out.println(paramMap);
 		return service.like(paramMap);
 	}
+	 // 헤더 검색
+    @GetMapping(value="/headerSearch", produces = "application/json; charset=UTF-8")
+    @ResponseBody
+    public List<Map<String, Object>> headerSearch(String query){
+    	return service.headerSearch(query);
+    }
+    
+
+	
+	
 }

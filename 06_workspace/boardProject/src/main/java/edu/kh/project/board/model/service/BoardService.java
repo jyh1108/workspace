@@ -10,7 +10,7 @@ public interface BoardService {
 
 	List<Map<String, Object>> selectBoardTypeList();
 
-	Map<String, Object> selectVoardList(int boardCode, int cp);
+	Map<String, Object> selectBoardList(int boardCode, int cp);
 
 	/** 게시글 상세 조회
 	 * @param boardCode
@@ -36,4 +36,21 @@ public interface BoardService {
 	 * @return result
 	 */
 	int updateReadCount(int boardNo)  throws IllegalStateException, IOException;
+	
+	/** 게시글 목록 조회 (검색)
+	    * @param paramMap
+	    * @param cp
+	    * @return boardList
+	    */
+	   Map<String, Object> selectBoardList(Map<String, Object> paramMap, int cp);
+
+
+		/** 헤더 검색
+		 * @param query
+		 * @return list
+		 */
+		List<Map<String, Object>> headerSearch(String query);
+
+
 }
+
