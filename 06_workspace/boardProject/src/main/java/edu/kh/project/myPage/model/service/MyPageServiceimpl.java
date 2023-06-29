@@ -2,7 +2,6 @@ package edu.kh.project.myPage.model.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,7 +14,7 @@ import edu.kh.project.member.model.dto.Member;
 import edu.kh.project.myPage.model.dao.MyPageDAO;
 
 @Service // 비즈니스 로직 처리 클래스 + Bean 등록 (IOC)
-public class MyPageServiceImpl implements MyPageService{
+public class MyPageServiceimpl implements MyPageService{
 
 	@Autowired // MyPageDAO 의존성 주입(DI)
 	private MyPageDAO dao;
